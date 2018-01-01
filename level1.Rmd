@@ -1,5 +1,5 @@
 ---
-title: "level1"
+title: "Level1"
 author: "Sridhar"
 date: "1 January 2018"
 output: html_document
@@ -8,23 +8,32 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Add Libraries
+```{r}
+library(ggplot2)
+library(dplyr)
 
-## R Markdown
+```
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Analysis of Pokemon Data
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+There are various types of pokemon in that universe.Lets enter the world of pokemons!
 
-```{r cars}
-read.csv("Pokemon.csv")
+
+```{r}
+poke <- read.csv("Pokemon.csv")
+head(poke)
 ```
 
 ## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+str(poke)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+
+```
+
