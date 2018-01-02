@@ -25,7 +25,7 @@ poke <- read.csv("Pokemon.csv")
 head(poke)
 ```
 
-## Including Plots
+## Investigating the Dataset
 
 ```{r}
 str(poke)
@@ -33,7 +33,27 @@ str(poke)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-```{r}
+## Visualize 
 
+```{r}
+qplot( x = poke$Type.1,data = poke,xlab = "Types of Pokemons",ylab = "Count for each type",color = I('black'),fill = I("#5900b3"))
+```
+
+
+
+## Exploring Attacks
+
+```{r}
+ggplot(aes(x =Attack), data = poke)+
+  geom_freqpoly(aes(color = Type.1))
+
+```
+## Best pokemon 
+
+```{r}
+str(poke$Total)
+best_set <- subset(poke,Total >=700)
+ggplot(aes(x = Name, y = Attack),data = best_set)+
+  scale_x_discrete(limits = c(0,100))
 ```
 
